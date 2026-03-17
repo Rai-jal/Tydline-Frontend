@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* ─── Font Faces ─────────────────────────────────────────── */
+
+@font-face {
+    font-family: "PPFormula";
+    src: url("/fonts/PPFormula-ExtendedBold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PPFormula";
+    src: url("/fonts/PPFormula-ExtendedMedium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "GTCinetype";
+    src: url("/fonts/GTCinetype-Regular.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ─── Tailwind Theme Tokens ──────────────────────────────── */
+
+@theme {
+    --font-heading: "PPFormula", sans-serif;
+    --font-body: "GTCinetype", sans-serif;
+}
+
+/* ─── Global Base Styles ─────────────────────────────────── */
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "GTCinetype", sans-serif;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    #root {
+        min-height: 100vh;
+    }
+
+    /* Headings — PP Formula Extended Extrabold */
+    h1,
+    h2 {
+        font-family: "PPFormula", sans-serif;
+        font-weight: 800;
+    }
+
+    /* Subheadings — PP Formula Extended Medium */
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "PPFormula", sans-serif;
+        font-weight: 500;
+    }
+
+    /* Body copy, links, buttons — GT Cinetype Regular */
+    p,
+    a,
+    button,
+    input,
+    textarea,
+    select,
+    label {
+        font-family: "GTCinetype", sans-serif;
+        font-weight: 400;
+    }
+}
