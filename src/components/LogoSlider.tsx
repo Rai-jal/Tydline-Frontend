@@ -11,7 +11,7 @@ import safmarine from "../assets/shippinglineicons/safmarine.webp";
 import bbc from "../assets/shippinglineicons/BBC.webp";
 import ael from "../assets/shippinglineicons/AEL.webp";
 import goldStar from "../assets/shippinglineicons/gold star.webp";
-import one from "../assets/shippinglineicons/flag.webp";
+import one from "../assets/shippinglineicons/one.webp";
 import zim from "../assets/shippinglineicons/zim.webp";
 import mol from "../assets/shippinglineicons/mol.webp";
 import nildutch from "../assets/shippinglineicons/nildutch.webp";
@@ -41,17 +41,17 @@ const bottomRow = [
 
 function LogoSlider() {
   return (
-    <section className="py-10 bg-white">
-      <p className="text-center text-xs tracking-widest text-gray-500 uppercase mb-8 font-body">
+    <section className="w-[calc(100%+2.5rem)] -mx-5 mt-auto mb-0">
+      <p className="text-center text-xs tracking-widest text-gray-500 uppercase py-2 bg-white border border-[#052698]/15 font-body">
         Connected across various shipping lines
       </p>
 
       {/* Single 9-column grid — both rows share identical column widths */}
-      <div className="grid grid-cols-9 px-4 max-w-screen-xl mx-auto">
+      <div className="grid grid-cols-9 w-full">
         {[...topRow, ...bottomRow].map((logo) => (
           <div
             key={logo.alt}
-            className="h-[70px] border border-gray-100 flex items-center justify-center p-3"
+            className="h-[60px] border border-gray-200 flex items-center justify-center p-3"
           >
             <img
               src={logo.src}
@@ -61,7 +61,7 @@ function LogoSlider() {
           </div>
         ))}
         {/* Empty cell to complete the second row */}
-        <div className="h-[70px] border border-gray-100" />
+        <div className="h-[60px] border border-gray-200" />
       </div>
     </section>
   );

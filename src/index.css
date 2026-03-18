@@ -44,15 +44,18 @@
 
     body {
         margin: 0;
-        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
         font-family: "GTCinetype", sans-serif;
         font-weight: 400;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        background-color: #F9E4D2;
     }
 
     #root {
-        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
     }
 
     /* Headings — PP Formula Extended Extrabold */

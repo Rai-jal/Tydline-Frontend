@@ -13,7 +13,7 @@ interface HeroCardProps {
 
 function HeroCard({ image, articles }: HeroCardProps) {
   return (
-    <div className="relative w-[85%] mt-12">
+    <div className="relative w-[65%]">
       {/* Corner brackets */}
       <span className="absolute -top-3 -left-3 w-10 h-10 border-t-3 border-l-3 border-[#FF8400]" />
       <span className="absolute -top-3 -right-3 w-10 h-10 border-t-3 border-r-3 border-[#FF8400]" />
