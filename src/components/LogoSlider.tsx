@@ -50,26 +50,49 @@ function LogoSlider() {
         Connected across various shipping lines
       </p>
 
-      {/* Desktop: 9-column grid */}
-      <div className="hidden md:grid grid-cols-9 w-full">
-        {allLogos.map((logo) => (
-          <div
-            key={logo.alt}
-            className="h-[60px] flex items-center justify-center p-3"
-          >
-            <img
-              src={logo.src}
-              alt={logo.alt}
-              className="w-full h-full object-contain"
-              style={logo.scale ? { transform: `scale(${logo.scale})` } : undefined}
-            />
-          </div>
-        ))}
+      {/* Desktop: two-row marquee */}
+      <div className="hidden md:block overflow-hidden relative">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-48 z-10 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-48 z-10 bg-gradient-to-l from-white to-transparent" />
+        {/* Top row — scrolls left */}
+        <div className="flex animate-marquee w-max" style={{ animationDuration: "60s" }}>
+          {[...topRow, ...topRow].map((logo, i) => (
+            <div
+              key={`top-${logo.alt}-${i}`}
+              className="h-[60px] w-[130px] flex items-center justify-center p-3 shrink-0"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="w-full h-full object-contain"
+                style={logo.scale ? { transform: `scale(${logo.scale})` } : undefined}
+              />
+            </div>
+          ))}
+        </div>
+        {/* Bottom row — scrolls right */}
+        <div className="flex animate-marquee-reverse w-max" style={{ animationDuration: "70s" }}>
+          {[...bottomRow, ...bottomRow].map((logo, i) => (
+            <div
+              key={`bottom-${logo.alt}-${i}`}
+              className="h-[60px] w-[130px] flex items-center justify-center p-3 shrink-0"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="w-full h-full object-contain"
+                style={logo.scale ? { transform: `scale(${logo.scale})` } : undefined}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Mobile: horizontal marquee slider */}
-      <div className="md:hidden overflow-hidden">
-        <div className="flex animate-marquee w-max">
+      <div className="md:hidden overflow-hidden relative">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 z-10 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 z-10 bg-gradient-to-l from-white to-transparent" />
+        <div className="flex animate-marquee w-max" style={{ animationDuration: "80s" }}>
           {[...allLogos, ...allLogos].map((logo, i) => (
             <div
               key={`${logo.alt}-${i}`}
