@@ -1,6 +1,6 @@
-import InputField from "../components/ui/InputField";
-import Button from "../components/ui/Button";
+import HeadingSection from "../components/HeadingSection";
 import HeroCard from "../components/HeroCard";
+import TrackingInput from "../components/TrackingInput";
 import herocardimg from "../assets/herocardimg.webp";
 import gmail from "../assets/iconpack/gmail.svg";
 import outlook from "../assets/iconpack/outlook.svg";
@@ -12,21 +12,10 @@ import LogoSlider from "../components/LogoSlider";
 
 function CTA() {
   return (
-    <div className="w-full flex-1 flex flex-col items-center px-4">
-      {/* Heading + subtext group */}
-      <div className="flex flex-col items-center mt-6">
-        <h1 className="text-[#052698] text-center text-3xl font-[900]">
-          TASA - your AI agent for zero - delay imports.
-        </h1>
-        <p className="text-center text-[#545454] w-[85%] mt-3 text-base leading-relaxed">
-          Finally eliminate demurrage fees and protect your margins. Get
-          continuous, real-time updates across <br /> WhatsApp, email, and your ERP so
-          your cargo never sits waiting.
-        </p>
-      </div>
-
-      {/* Hero card — centered in remaining space */}
-      <div className="flex-1 flex items-center justify-center w-full">
+    <div className="w-full flex-1 flex flex-col items-center -mt-6">
+      {/* Middle content — clustered together in center */}
+      <div className="flex-1 flex flex-col items-center justify-center w-full gap-8">
+        <HeadingSection />
         <HeroCard
           image={herocardimg}
           articles={[
@@ -47,12 +36,7 @@ function CTA() {
             },
           ]}
         />
-      </div>
-
-      {/* Input + Get Started group */}
-      <div className="flex items-center justify-center gap-2 mb-6 w-[55%]">
-        <InputField className="flex-1 h-13" />
-        <Button className="w-36 h-12" />
+        <TrackingInput />
       </div>
 
       <LogoSlider />

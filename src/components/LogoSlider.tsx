@@ -15,6 +15,7 @@ import one from "../assets/shippinglineicons/one.webp";
 import zim from "../assets/shippinglineicons/zim.webp";
 import mol from "../assets/shippinglineicons/mol.webp";
 import nildutch from "../assets/shippinglineicons/nildutch.webp";
+import evergreen from "../assets/shippinglineicons/flag.webp";
 
 const topRow = [
   { src: maersk,   alt: "Maersk" },
@@ -37,6 +38,7 @@ const bottomRow = [
   { src: zim,       alt: "ZIM" },
   { src: mol,       alt: "MOL" },
   { src: nildutch,  alt: "NileDutch" },
+  { src: evergreen, alt: "Evergreen" },
 ];
 
 function LogoSlider() {
@@ -51,7 +53,7 @@ function LogoSlider() {
         {[...topRow, ...bottomRow].map((logo) => (
           <div
             key={logo.alt}
-            className="h-[60px] border border-gray-200 flex items-center justify-center p-3"
+            className="h-[60px] flex items-center justify-center p-3"
           >
             <img
               src={logo.src}
@@ -60,8 +62,6 @@ function LogoSlider() {
             />
           </div>
         ))}
-        {/* Empty cell to complete the second row */}
-        <div className="h-[60px] border border-gray-200" />
       </div>
     </section>
   );

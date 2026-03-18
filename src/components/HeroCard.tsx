@@ -13,14 +13,14 @@ interface HeroCardProps {
 
 function HeroCard({ image, articles }: HeroCardProps) {
   return (
-    <div className="relative w-[65%]">
+    <div className="relative w-[60%]">
       {/* Corner brackets */}
       <span className="absolute -top-3 -left-3 w-10 h-10 border-t-3 border-l-3 border-[#FF8400]" />
       <span className="absolute -top-3 -right-3 w-10 h-10 border-t-3 border-r-3 border-[#FF8400]" />
       <span className="absolute -bottom-3 -left-3 w-10 h-10 border-b-3 border-l-3 border-[#FF8400]" />
       <span className="absolute -bottom-3 -right-3 w-10 h-10 border-b-3 border-r-3 border-[#FF8400]" />
 
-      <section className="flex flex-row w-full h-55 border border-[#052698]/30 overflow-hidden shadow-sm">
+      <section className="flex flex-row w-full h-52 border border-[#052698]/30 overflow-hidden shadow-sm">
         {/* Left — image */}
         <div className="w-1/2 shrink-0 overflow-hidden">
           <img
@@ -35,7 +35,7 @@ function HeroCard({ image, articles }: HeroCardProps) {
           {articles.map((article, index) => (
             <article
               key={index}
-              className="flex-1 min-h-0 overflow-hidden flex flex-row items-center gap-3 px-4 relative"
+              className="flex-1 min-h-0 overflow-hidden flex flex-row items-center gap-3 px-4 relative bg-[#FFF5EC]"
             >
               {/* Icons */}
               <div className="flex items-center gap-1.5 shrink-0">
