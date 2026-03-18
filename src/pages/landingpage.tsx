@@ -1,4 +1,4 @@
-import Header from "../layouts/header";
+import Header from "../layouts/Header";
 import CTA from "../layouts/CTA";
 
 function LandingPage() {
