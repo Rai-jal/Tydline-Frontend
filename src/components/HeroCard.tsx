@@ -13,16 +13,16 @@ interface HeroCardProps {
 
 function HeroCard({ image, articles }: HeroCardProps) {
   return (
-    <div className="relative w-[60%]">
+    <div className="relative w-[90%] md:w-[60%]">
       {/* Corner brackets */}
       <span className="absolute -top-3 -left-3 w-10 h-10 border-t-3 border-l-3 border-[#FF8400]" />
       <span className="absolute -top-3 -right-3 w-10 h-10 border-t-3 border-r-3 border-[#FF8400]" />
       <span className="absolute -bottom-3 -left-3 w-10 h-10 border-b-3 border-l-3 border-[#FF8400]" />
       <span className="absolute -bottom-3 -right-3 w-10 h-10 border-b-3 border-r-3 border-[#FF8400]" />
 
-      <section className="flex flex-row w-full h-52 border border-[#052698]/30 overflow-hidden shadow-sm">
-        {/* Left — image */}
-        <div className="w-1/2 shrink-0 overflow-hidden">
+      <section className="flex flex-col md:flex-row w-full md:h-52 border border-[#052698]/30 overflow-hidden shadow-sm">
+        {/* Top on mobile / Left on desktop — image */}
+        <div className="w-full md:w-1/2 h-36 md:h-auto shrink-0 overflow-hidden">
           <img
             src={image}
             alt="Cargo ship"
@@ -30,12 +30,12 @@ function HeroCard({ image, articles }: HeroCardProps) {
           />
         </div>
 
-        {/* Right — articles */}
-        <div className="w-1/2 h-full flex flex-col divide-y divide-[#052698]/10 border-l border-[#052698]/20">
+        {/* Bottom on mobile / Right on desktop — articles */}
+        <div className="w-full md:w-1/2 h-full flex flex-col divide-y divide-[#052698]/10 border-t md:border-t-0 md:border-l border-[#052698]/20">
           {articles.map((article, index) => (
             <article
               key={index}
-              className="flex-1 min-h-0 overflow-hidden flex flex-row items-center gap-3 px-4 relative bg-[#FFF5EC]"
+              className="flex-1 min-h-[48px] md:min-h-0 overflow-hidden flex flex-row items-center gap-3 px-4 relative bg-[#FFF5EC]"
             >
               {/* Icons */}
               <div className="flex items-center gap-1.5 shrink-0">

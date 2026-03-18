@@ -18,39 +18,41 @@ import nildutch from "../assets/shippinglineicons/nildutch.webp";
 import evergreen from "../assets/shippinglineicons/flag.webp";
 
 const topRow = [
-  { src: maersk,   alt: "Maersk" },
+  { src: maersk,   alt: "Maersk",         scale: 1.5 },
   { src: cma,      alt: "CMA CGM" },
   { src: hapag,    alt: "Hapag-Lloyd" },
-  { src: oocl,     alt: "OOCL" },
+  { src: oocl,     alt: "OOCL",           scale: 0.5 },
   { src: cosco,    alt: "COSCO" },
   { src: grimaldi, alt: "Grimaldi Group" },
   { src: msc,      alt: "MSC" },
-  { src: arkas,    alt: "Arkas" },
-  { src: pil,      alt: "PIL" },
+  { src: arkas,    alt: "Arkas",           scale: 0.8 },
+  { src: pil,      alt: "PIL",             scale: 0.5 },
 ];
 
 const bottomRow = [
-  { src: safmarine, alt: "Safmarine" },
-  { src: bbc,       alt: "BBC Chartering" },
+  { src: safmarine, alt: "Safmarine",       scale: 0.5 },
+  { src: bbc,       alt: "BBC Chartering",  scale: 2 },
   { src: ael,       alt: "Africa Express Line" },
   { src: goldStar,  alt: "Gold Star Line" },
   { src: one,       alt: "ONE" },
   { src: zim,       alt: "ZIM" },
   { src: mol,       alt: "MOL" },
   { src: nildutch,  alt: "NileDutch" },
-  { src: evergreen, alt: "Evergreen" },
+  { src: evergreen, alt: "Evergreen",       scale: 2 },
 ];
 
 function LogoSlider() {
+  const allLogos = [...topRow, ...bottomRow];
+
   return (
-    <section className="w-[calc(100%+2.5rem)] -mx-5 mt-auto mb-0">
-      <p className="text-center text-xs tracking-widest text-gray-500 uppercase py-2 bg-white border border-[#052698]/15 font-body">
+    <section className="w-[calc(100%+1rem)] -mx-2 md:w-[calc(100%+2.5rem)] md:-mx-5 mt-auto mb-0">
+      <p className="text-center text-xs tracking-widest  uppercase py-2 bg-white border border-[#052698]/15 font-body">
         Connected across various shipping lines
       </p>
 
-      {/* Single 9-column grid — both rows share identical column widths */}
-      <div className="grid grid-cols-9 w-full">
-        {[...topRow, ...bottomRow].map((logo) => (
+      {/* Desktop: 9-column grid */}
+      <div className="hidden md:grid grid-cols-9 w-full">
+        {allLogos.map((logo) => (
           <div
             key={logo.alt}
             className="h-[60px] flex items-center justify-center p-3"
@@ -59,9 +61,29 @@ function LogoSlider() {
               src={logo.src}
               alt={logo.alt}
               className="w-full h-full object-contain"
+              style={logo.scale ? { transform: `scale(${logo.scale})` } : undefined}
             />
           </div>
         ))}
+      </div>
+
+      {/* Mobile: horizontal marquee slider */}
+      <div className="md:hidden overflow-hidden">
+        <div className="flex animate-marquee w-max">
+          {[...allLogos, ...allLogos].map((logo, i) => (
+            <div
+              key={`${logo.alt}-${i}`}
+              className="h-[50px] w-[70px] flex items-center justify-center p-2 shrink-0"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="w-full h-full object-contain"
+                style={logo.scale ? { transform: `scale(${logo.scale})` } : undefined}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

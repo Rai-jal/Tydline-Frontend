@@ -4,7 +4,8 @@
 
 @font-face {
     font-family: "PPFormula";
-    src: url("/fonts/PPFormula-ExtendedBold.woff2") format("woff2");
+    src: url("./assets/PPFormula-ExtendedBold.woff") format("woff"),
+         url("/fonts/PPFormula-ExtendedBold.woff2") format("woff2");
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -12,7 +13,8 @@
 
 @font-face {
     font-family: "PPFormula";
-    src: url("/fonts/PPFormula-ExtendedMedium.woff2") format("woff2");
+    src: url("./assets/PPFormula-ExtendedMedium.woff") format("woff"),
+         url("/fonts/PPFormula-ExtendedMedium.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -56,6 +58,13 @@
     #root {
         height: 100vh;
         overflow: hidden;
+    }
+
+    @media (max-width: 767px) {
+        body,
+        #root {
+            overflow: auto;
+        }
     }
 
     /* Headings — PP Formula Extended Extrabold */
