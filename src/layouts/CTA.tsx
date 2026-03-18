@@ -8,6 +8,7 @@ import whatsapp from "../assets/iconpack/whatsapp.svg";
 import whatsappBusiness from "../assets/iconpack/whatsappbusines.svg";
 import plug from "../assets/iconpack/plug.svg";
 import settings from "../assets/iconpack/settings.svg";
+import LogoSlider from "../components/LogoSlider";
 
 function CTA() {
   return (
@@ -21,7 +22,7 @@ function CTA() {
         your cargo never sits waiting.
       </p>
       <div className="flex items-center justify-center gap-2 mt-8 w-[60%]">
-        <InputField className="flex-1 h-12" />
+        <InputField className="flex-1 h-13" />
         <Button className="w-36 h-12" />
       </div>
       <HeroCard
@@ -44,6 +45,7 @@ function CTA() {
           },
         ]}
       />
+      <LogoSlider />
     </div>
   );
 }

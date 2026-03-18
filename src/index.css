@@ -100,6 +100,34 @@
         color: inherit;
     }
 
+    /* ─── Marquee Animation ──────────────────────────────────── */
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-marquee {
+        animation: marquee 100s linear infinite;
+    }
+
+    @keyframes marquee-reverse {
+        from {
+            transform: translateX(-50%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    .animate-marquee-reverse {
+        animation: marquee-reverse 100s linear infinite;
+    }
+
     input:focus,
     textarea:focus,
     select:focus {

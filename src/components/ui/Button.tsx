@@ -20,7 +20,7 @@ function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`border border-[#052698] bg-white ring-1 ring-[#052698]/30 ring-offset-2 px-4 py-2 text-[#052698] font-medium cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+      className={`border border-[#052698] bg-white ring-1 ring-[#052698]/30 ring-offset-2 px-4 py-2 font-medium cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
     >
       {children ?? "Get Started"}
     </button>
