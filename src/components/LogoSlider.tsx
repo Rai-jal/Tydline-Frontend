@@ -46,32 +46,22 @@ function LogoSlider() {
         Connected across various shipping lines
       </p>
 
-      <div className="space-y-6 px-8">
-        {/* Top row — 9 logos */}
-        <div className="flex items-center justify-center gap-6">
-          {topRow.map((logo) => (
-            <div key={logo.alt} className="flex items-center justify-center w-[120px]">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-h-10 max-w-full w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom row — 8 logos */}
-        <div className="flex items-center justify-center gap-6">
-          {bottomRow.map((logo) => (
-            <div key={logo.alt} className="flex items-center justify-center w-[120px]">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-h-10 max-w-full w-auto object-contain"
-              />
-            </div>
-          ))}
-        </div>
+      {/* Single 9-column grid — both rows share identical column widths */}
+      <div className="grid grid-cols-9 px-4 max-w-screen-xl mx-auto">
+        {[...topRow, ...bottomRow].map((logo) => (
+          <div
+            key={logo.alt}
+            className="h-[70px] border border-gray-100 flex items-center justify-center p-3"
+          >
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              className="w-full h-full object-contain"
+            />
+          </div>
+        ))}
+        {/* Empty cell to complete the second row */}
+        <div className="h-[70px] border border-gray-100" />
       </div>
     </section>
   );
